@@ -17,9 +17,5 @@ int main(void)
 	for (c = 'a'; c <= 'z'; c++)
 		if (c != 'q' && c != 'e')
 			putchar(c);
-	for (d = 'A'; d <= 'Z'; d++)
-		if (d != 'Q' && d != 'E')		
-			putchar(d);
-
 	return (0);
 }
