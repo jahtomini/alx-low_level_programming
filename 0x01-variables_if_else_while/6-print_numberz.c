@@ -4,7 +4,7 @@
 /**
 * main - Entry point
 * description - print all numbers of base 10
-* return: Always 0 (Success)
+* Return: 0
 */
 
 int main(void)
