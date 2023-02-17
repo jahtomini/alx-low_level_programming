@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -11,10 +12,11 @@
 
 int main(void)
 {
-	char c;
+	int i;
 
-	for (c = 'a'; c <= 'z'; c++)
-		if (c != 'q' && c != 'e')
-			putchar(c);
+	for (i = 0; i < 10; i++)
+		printf("%i", i);
+
+	printf("\n");
 	return (0);
 }
