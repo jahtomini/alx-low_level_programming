@@ -2,14 +2,9 @@
 
 /**
 * main - Entry point
-* description - Print the alphabet in lowercase followed by a line
+i* description - Print the alphabet in lowercase followed by a line
 * Return: Always 0 (Success)
 */
-
-int main(void)
-{
-	print_alphabet();
-}
 
 void print_alphabet(void)
 {
