@@ -10,7 +10,6 @@
 
 void print_alphabet(void)
 {
-	int i;
 	char c;
 	char n = '\n';
 
