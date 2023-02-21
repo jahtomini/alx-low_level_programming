@@ -12,7 +12,7 @@ int main(void)
 	char c;
 	char n = '\n';
 
-	for (c = 'a'; c < '26'; i++)
+	for (c = 'a'; c < 'z'; i++)
 	{
 		_putchar(c[i]);
 	}
