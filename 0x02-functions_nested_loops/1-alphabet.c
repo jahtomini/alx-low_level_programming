@@ -9,11 +9,12 @@
 int main(void)
 {
 	int i;
-	char c[25] = "abcdefghijklmnopqrstuvwxyz";
+	char c;
+	char n = '\n'
 
-	for (i = 0; i < 26; i++)
+	for (c = 'a'; c < '26'; i++)
 	{
 		_putchar(c[i]);
 	}
-	_putchar("\n");
+	_putchar(n);
 }
