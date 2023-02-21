@@ -10,7 +10,7 @@ int main(void)
 {
 	int i;
 	char c;
-	char n = '\n'
+	char n = '\n';
 
 	for (c = 'a'; c < '26'; i++)
 	{
