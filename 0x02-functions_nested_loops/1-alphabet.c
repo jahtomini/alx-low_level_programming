@@ -2,7 +2,7 @@
 
 /**
 * main - Entry point
-i* description - Print the alphabet in lowercase followed by a line
+* description - Print the alphabet in lowercase followed by a new line
 * Return: Always 0 (Success)
 */
 
