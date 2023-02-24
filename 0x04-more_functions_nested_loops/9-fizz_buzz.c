@@ -6,12 +6,14 @@
   * @size: The number of squares/number of times
   *
   * Return: empty
+  *
   */
 
-void fizz_buzz(void)
+
+int  main(void)
 {
-	int i = 0;
-	for (i = 0; i <= 100; i++)
+	int i;
+	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0)
 		{
@@ -23,7 +25,9 @@ void fizz_buzz(void)
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%i ", i);
 		}
 	}
+
+	return (0);
 }
