@@ -2,7 +2,7 @@
 
 /**
  * print_line - print_line
- *
+ * @n: input, the number of lines to draw
  * Description - print a line using the '_' character n times
  * Return - No return value
  */
