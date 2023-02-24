@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
-  * print_square - Prints n squares according n number of times
-  * @size: The number of squares/number of times
+  * main - main
+  * Description - Prints n squares according n number of times
   *
   * Return: empty
   *
@@ -13,6 +13,7 @@
 int  main(void)
 {
 	int i;
+
 	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0)
