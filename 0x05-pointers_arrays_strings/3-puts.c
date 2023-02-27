@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
   * _puts - _puts
@@ -15,7 +16,7 @@ void _puts(char *str)
 	int len;
 	int i;
 	
-	len = _strlen(str);
+	len = strlen(str);
 	for (i=0; i < len; i++)
 	{
 		_putchar(str[i]);
