@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
-  * swap - swap
+  * swap_int - swap_int
   * Description - swap the values of two ints using their pointers
-  * @*a: the first pointer
-  * @*b: the second pointer
+  * @a: the first int being pointed to
+  * @b: the second int being pointed to
   *
   * Return: empty
   *
