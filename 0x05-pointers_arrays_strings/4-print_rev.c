@@ -1,0 +1,25 @@
+#include "main.h"
+#include <string.h>
+
+/**
+  * print_rev - print_rev
+  * Description - print a string to stdout in reverse
+  * @str: the string being pointed at
+  *
+  * Return: empty
+  *
+  */
+
+
+void print_rev(char *s)
+{
+	int len;
+	int i;
+
+	len = strlen(s);
+	for (i = len; i < 0; i--)
+	{
+		_putchar(s[i]);
+	}
+	_putchar('\n');
+}
