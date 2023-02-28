@@ -23,8 +23,7 @@ void print_array(int *a, int n)
 			printf("%i, ", a[i]);
 		} else
 		{
-			printf("%i", a[i]);
+			printf("%i\n", a[i]);
 		}
 	}
-	_putchar('\n');
 }
