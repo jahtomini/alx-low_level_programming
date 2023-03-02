@@ -2,8 +2,7 @@
 #include <string.h>
 
 /**
-  * _strcmp - _strcmp
-  * Description - Compare two strings
+  * _strcmp - Compare two strings
   * @s1: the first string
   * @s2: the second string
   *
@@ -13,14 +12,15 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 == *s2)
+	int res = 0;
+
+	while (*s1 == *s2 && *s1 != '\0')
 	{
-		if (*s1 == '\0')
-		{
-			return (0);
-		}
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	if (s1 != s2)
+		res = *s1 - *s2;
+
+	return (res);
 }
