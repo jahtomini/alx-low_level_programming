@@ -6,7 +6,8 @@
   * @s1: the first string
   * @s2: the second string
   *
-  * Return: an integer greater than, equal to or less than 0 respectively depending on if s1 is less than, matches, or is more than s2.
+  * Return: an integer greater than, equal to or less than 0 respectively
+  * depending on if s1 is less than, matches, or is more than s2.
   *
   */
 
