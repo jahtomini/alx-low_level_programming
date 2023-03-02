@@ -7,7 +7,7 @@
   * @src: the string to be appended
   * @dest: the string that src would be appended to
   *
-  * Return: empty
+  * Return: the concatenated string
   *
   */
 
