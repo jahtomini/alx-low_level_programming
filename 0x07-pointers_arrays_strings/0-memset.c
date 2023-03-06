@@ -6,7 +6,7 @@
  * @s: The string
  * @b: The replacing byte
  * @n: Number of bytes in the string to be replaced
- * Return: The encoded string
+ * Return: Pointer to the string s
  */
 
 char *_memset(char *s, char b, unsigned int n)
