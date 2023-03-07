@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strspn - a function that gets the length of a prefix substring.
+ * print_chessboard - function that prints a chessboard using
+ * letters in a 2-D array
  *
- * @s: The string to be searched
- * @accept: The char to be searched for
+ * @a: The array pointer
  *
  * Return: 0
  */
