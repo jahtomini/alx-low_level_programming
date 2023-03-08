@@ -14,7 +14,6 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int i = 0;
-	// char *p = &(s[i]);
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -24,5 +23,5 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (NULL);
+	return NULL;
 }
