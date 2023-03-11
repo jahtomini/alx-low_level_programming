@@ -6,7 +6,7 @@
   * @argc: number of args
   * @argv: array of args
   *
-  * Return: nothing
+  * Return: 0
   *
   */
 
