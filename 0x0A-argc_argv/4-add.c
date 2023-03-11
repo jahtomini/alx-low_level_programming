@@ -14,7 +14,7 @@
   */
 
 int main(int argc, char *argv[])
-{	
+{
 	int s;
 	int i = 0;
 
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	
+
 	s = 0;
 
 	for (i = 1; i < argc; i++)
