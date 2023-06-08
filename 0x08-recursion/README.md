@@ -31,3 +31,7 @@ Recursive programming is a method of problem solving in which a function calls i
 ### 6 - _Check if a number is prime using recursion_
 
 [View →](./6-is_prime_number.c)
+
+### 7 - _Check if a string is a palindrome_
+
+[View →](./100-is_palindrome.c)
