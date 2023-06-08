@@ -7,3 +7,19 @@ Recursive programming is a method of problem solving in which a function calls i
 ### 0 - _Print a string using recursion_
 
 [View →](./0-puts_recursion.c)
+
+### 1 - _Print a string in reverse using recursion_
+
+[View →](./1-print_rev_recursion.c)
+
+### 2 - _Return the length of a string using recursion_
+
+[View →](./2-strlen_recursion.c)
+
+### 3 - _Calculate the factorial of a number using recursion_
+
+[View →](./3-factorial.c)
+
+### 4 - _Calculate the square of a number using recursion_
+
+[View →](./4-pow_recursion.c)
