@@ -23,3 +23,11 @@ Recursive programming is a method of problem solving in which a function calls i
 ### 4 - _Calculate the square of a number using recursion_
 
 [View →](./4-pow_recursion.c)
+
+### 5 - _Calculate the square root of a number using recursion_
+
+[View →](./5-sqrt_recursion.c)
+
+### 6 - _Check if a number is prime using recursion_
+
+[View →](./6-is_prime_number.c)

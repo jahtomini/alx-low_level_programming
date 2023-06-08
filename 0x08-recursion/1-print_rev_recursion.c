@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <string.h>
 
 /**
@@ -7,8 +6,6 @@
  * @s: The string
  * Return: nothing.
  */
-
-
 
 void _print_rev_recursion(char *s)
 {
