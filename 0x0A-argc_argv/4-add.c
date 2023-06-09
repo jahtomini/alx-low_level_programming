@@ -3,10 +3,8 @@
 #include <ctype.h>
 #include "main.h"
 
-#define FAILURE -1
-
 /**
- * main - Add all passed non-zero-indexed arguments to a program and print the output.
+ * main - Add all non-zero-indexed arguments passed to a program and print the output.
  *
  * @argc: Number of arguments.
  * @argv: Array of arguments as strings.
@@ -15,6 +13,8 @@
  */
 int main(int argc, char *argv[])
 {
+#define FAILURE -1
+
 	int i, result = 0;
 
 	if (validate_args(argc, argv) == FAILURE)
