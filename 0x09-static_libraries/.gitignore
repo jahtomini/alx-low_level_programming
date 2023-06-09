@@ -1,3 +1,4 @@
 o_files
+c_files
 *.o
-create_static_lib--old.sh
+main.c
