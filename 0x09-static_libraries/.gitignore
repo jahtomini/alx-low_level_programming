@@ -1,0 +1,4 @@
+o_files
+*.o
+*.a
+create_static_lib--old.sh
