@@ -31,16 +31,26 @@ int main(int argc, char *argv[])
 
 	coins = 0;
 
+	coins = calculate_coins(amount);
+
+	printf("%i\n", coins);
+	return (0);
+}
+
+/**
+ * calculate_coins - Calculate the amount of minimum number of
+ * coins needed to produce change for an amount of money.
+ *
+ * @amount: The amount of money.
+ *
+ * Return: The minimum number of coins needed to produce change for @amount.
+ */
+int calculate_coins(int amount)
+{
+	int coins = 0;
+
 	while (amount > 0)
 	{
-		/*
-		 * can you subtract 25 safely? (non-negative difference)
-		 * if yes, amount = amount - 25 and coins++
-		 * if no, try using the next lowest denomination
-		 * do this until amount == 0
-		 *
-		 */
-
 		if ((amount - 25) >= 0)
 		{
 			amount = amount - 25;
@@ -76,7 +86,5 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-
-	printf("%i\n", coins);
-	return (0);
+	return (coins);
 }

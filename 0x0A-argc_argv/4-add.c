@@ -4,7 +4,8 @@
 #include "main.h"
 
 /**
- * main - Add all non-zero-indexed arguments passed to a program and print the output.
+ * main - Add all non-zero-indexed arguments
+ * passed to a program and print the output.
  *
  * @argc: Number of arguments.
  * @argv: Array of arguments as strings.
