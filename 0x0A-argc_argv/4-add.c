@@ -13,6 +13,7 @@
  */
 int main(int argc, char *argv[])
 {
+
 #define FAILURE -1
 
 	int i, result = 0;
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 	if (validate_args(argc, argv) == FAILURE)
 	{
 		printf("Error\n");
-		return (-1);
+		return (1);
 	}
 
 	for (i = 1; argv[i] != NULL; i++)

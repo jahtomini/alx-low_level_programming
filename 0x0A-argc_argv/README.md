@@ -29,3 +29,7 @@
 ### 4 - _Add the program's non-zero-indexed arguments_
 
 [View →](./4-add.c)
+
+### 100 - _Calculate the minimum number of coins needed to produce change for an amount of money_
+
+[View →](./100-change.c)
