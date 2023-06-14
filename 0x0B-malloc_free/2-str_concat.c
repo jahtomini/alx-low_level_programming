@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -12,32 +13,65 @@
 char *str_concat(char *s1, char *s2)
 {
 	int i, j;
-	int first_string_len = _strlen(s1);
-	int second_string_len = _strlen(s2);
-	int total_length = first_string_len + second_string_len;
-	char *concatenation = malloc(sizeof(s1) + sizeof(s2));
+	int first_string_len;
+	int second_string_len;
+	int total_length;
+	char *concatenation;
+	char *first;
+	char *second;
+
+
+	if (s1 == NULL)
+	{
+		first = malloc(1);
+		first[0] = '\0';
+		first_string_len = 1;
+
+	}
+	else {
+		first = s1;
+		first_string_len = _strlen(first);
+	}
+
+	if (s2 == NULL)
+	{
+		second = malloc(1);
+		second[0] = '\0';
+		second_string_len = 1;
+	} else {
+		second = s2;
+		second_string_len = _strlen(second);
+	}
+
+
+	total_length = first_string_len + second_string_len;
+
+
+	concatenation = malloc((sizeof(char) * first_string_len) + (sizeof(char)  * second_string_len) + 1);
 
 	if (concatenation == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; s1[i] != '\0'; i++)
+
+	for (i = 0; i < first_string_len; i++)
 	{
-		if (s1[i] == '\0')
+		if (first[i] == '\0')
 			concatenation[i] = ' ';
 		else
-			concatenation[i] = s1[i];
+			concatenation[i] = first[i];
 	}
+
 
 	j = 0;
 
 	for (i = first_string_len; i < total_length; i++)
 	{
-		if (s2[j] == '\0')
+		if (second[j] == '\0')
 			concatenation[i] = ' ';
 		else
-			concatenation[i] = s2[j];
+			concatenation[i] = second[j];
 
 		j++;
 	}
@@ -56,9 +90,7 @@ char *str_concat(char *s1, char *s2)
 int _strlen(char *s)
 {
 	if (*s)
-	{
 		return (1 + _strlen(s + 1));
-	}
 
 	return (0);
 }

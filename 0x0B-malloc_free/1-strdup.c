@@ -15,21 +15,29 @@ char *_strdup(char *str)
 	char *copy;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
-	copy = malloc(sizeof(str));
+	copy = malloc(_strlen(str) + 1);
 
 	if (copy == NULL)
-	{
 		return (NULL);
-	}
 
 	for (i = 0; str[i] != '\0'; i++)
-	{
 		copy[i] = str[i];
-	}
 
 	return (copy);
+}
+
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string.
+ *
+ * Return: The length of the string.
+ */
+int _strlen(char *s)
+{
+	if (*s)
+		return (1 + _strlen(s + 1));
+
+	return (0);
 }
