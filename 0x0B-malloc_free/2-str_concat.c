@@ -12,72 +12,31 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j;
-	int first_string_len;
-	int second_string_len;
-	int total_length;
-	char *concatenation;
-	char *first;
-	char *second;
-
+	int s1_len, s2_len;
+	char *concatenation, *first, *second;
 
 	if (s1 == NULL)
 	{
-		first = malloc(1);
-		first[0] = '\0';
-		first_string_len = 1;
-
+		s1_len = 0;
 	}
-	else {
+	else
+	{
 		first = s1;
-		first_string_len = _strlen(first);
+		s1_len = _strlen(first);
 	}
 
 	if (s2 == NULL)
 	{
 		second = malloc(1);
-		second[0] = '\0';
-		second_string_len = 1;
-	} else {
+		s2_len = 1;
+	}
+	else
+	{
 		second = s2;
-		second_string_len = _strlen(second);
+		s2_len = _strlen(second);
 	}
 
-
-	total_length = first_string_len + second_string_len;
-
-
-	concatenation = malloc((sizeof(char) * first_string_len) + (sizeof(char)  * second_string_len) + 1);
-
-	if (concatenation == NULL)
-	{
-		return (NULL);
-	}
-
-
-	for (i = 0; i < first_string_len; i++)
-	{
-		if (first[i] == '\0')
-			concatenation[i] = ' ';
-		else
-			concatenation[i] = first[i];
-	}
-
-
-	j = 0;
-
-	for (i = first_string_len; i < total_length; i++)
-	{
-		if (second[j] == '\0')
-			concatenation[i] = ' ';
-		else
-			concatenation[i] = second[j];
-
-		j++;
-	}
-
-	concatenation[total_length + 1] = '\0';
-
+	concatenation = concatenate(first, second, s1_len, s2_len);
 	return (concatenation);
 }
 
@@ -93,4 +52,43 @@ int _strlen(char *s)
 		return (1 + _strlen(s + 1));
 
 	return (0);
+}
+
+/**
+ * concatenate - Combine two strings into one and return the result.
+ *
+ * @first: The first string.
+ * @second: The second string.
+ * @len1: The length of the first string.
+ * @len2: The length of the second string.
+ *
+ * Return: A pointer to the concatenated string.
+*/
+char *concatenate(char *first, char *second, int len1, int len2)
+{
+	char *result;
+	int total, i, j;
+
+	total = len1 + len2;
+	result = malloc((sizeof(char) * len1) + (sizeof(char) * len2) + 1);
+	if (result == NULL)
+		return (NULL);
+
+	for (i = 0; i < len1; i++)
+	{
+		if (first[i] != '\0')
+			result[i] = first[i];
+	}
+
+	j = 0;
+
+	for (i = len1; i < total; i++)
+	{
+		if (second[j] != '\0')
+			result[i] = second[j];
+		j++;
+	}
+
+	result[total + 1] = '\n';
+	return (result);
 }
