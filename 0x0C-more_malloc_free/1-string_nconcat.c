@@ -2,12 +2,21 @@
 #include <string.h>
 #include "main.h"
 
-char *string_nconcat(char *s1, char *s2, unsigned int n) 
+
+/**
+ * string_nconcat - Concatenate two strings.
+ * @s1: The first string.
+ * @s2: The second string.
+ * @n: The maximum amount of bytes to copy from s2.
+ *
+ * Return: The concatenated string.
+*/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int s1_len, s2_len;
 	char *first, *second;
 
-    if (s1 == NULL)
+	if (s1 == NULL)
 	{
 		s1_len = 0;
 	}
@@ -28,13 +37,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2_len = strlen(second);
 	}
 
+	if (n >= strlen(s2))
+	{
+		return (concatenate(first, second, s1_len, s2_len));
+	}
 
-    if (n >= strlen(s2))
-    {
-        return (concatenate(first, second, s1_len, s2_len));
-    }
-
-    return (concatenate(first, second, s1_len, n));
+	return (concatenate(first, second, s1_len, n));
 }
 
 /**
@@ -46,7 +54,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * @len2: The length of the second string.
  *
  * Return: A pointer to the concatenated string.
-*/
+ */
 char *concatenate(char *first, char *second, int len1, int len2)
 {
 	char *result;
