@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 
 /**
@@ -24,11 +25,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	while (*ptr)
-	{
-		ptr = 0;
-		ptr++;
-	}
+    memset(ptr, 0, (nmemb * size));
 
 	return (ptr);
 }
