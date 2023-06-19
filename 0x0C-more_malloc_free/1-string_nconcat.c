@@ -80,6 +80,6 @@ char *concatenate(char *first, char *second, int len1, int len2)
 		j++;
 	}
 
-	result[total + 1] = '\n';
+	result[total + 1] = '\0';
 	return (result);
 }
