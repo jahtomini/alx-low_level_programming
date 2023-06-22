@@ -6,8 +6,6 @@
  *
  * @name: The string the callback would be run on.
  * @f: The callback function.
- * 
- * Return: nothing.
 */
 void print_name(char *name, void (*f)(char *))
 {
