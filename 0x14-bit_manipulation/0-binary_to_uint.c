@@ -9,15 +9,20 @@
  * @b: The binary value as string.
  *
  * Return: The converted value as an unsigned integer.
- *
 */
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int *numbers;
 	unsigned int total = 0;
-	int i, array_size = _strlen(b) * sizeof(int);
+	int i, array_size;
+
+	if (b == NULL)
+		return (0);
+
+	array_size = _strlen(b) * sizeof(int);
 
 	numbers = malloc(array_size);
+
 
 	for (i = (_strlen(b) - 1); i >= 0; i--)
 	{
