@@ -1,7 +1,5 @@
 #include "main.h"
-#include <math.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 /**
@@ -22,7 +20,6 @@ unsigned int binary_to_uint(const char *b)
 	array_size = _strlen(b) * sizeof(int);
 
 	numbers = malloc(array_size);
-
 
 	for (i = (_strlen(b) - 1); i >= 0; i--)
 	{
