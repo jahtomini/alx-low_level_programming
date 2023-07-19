@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
  * read_textfile - Read the content of a file.
+ *
  * @filename: Pointer to the file.
  * @letters: Number of letters to be read.
  *
@@ -13,15 +14,16 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int file = open(filename, O_RDONLY);
+	char *buffer = malloc(sizeof(char) * (letters + 1));
+	ssize_t read_bytes = read(file, buffer, letters);
+	ssize_t written_bytes = write(STDOUT_FILENO, buffer, read_bytes);
+
 	if (!filename)
 		return (0);
 
-	int file = open(filename, O_RDONLY);
-
 	if (file == -1)
 		return (0);
-
-	char *buffer = malloc(sizeof(char) * (letters + 1));
 
 	if (!buffer)
 	{
@@ -29,16 +31,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t read_bytes = read(file, buffer, letters);
-
 	if (read_bytes == -1)
 	{
 		close(file);
 		free(buffer);
 		return (0);
 	}
-
-	ssize_t written_bytes = write(STDOUT_FILENO, buffer, read_bytes);
 
 	if (written_bytes == -1 || written_bytes != read_bytes)
 	{
