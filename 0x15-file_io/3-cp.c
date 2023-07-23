@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	while (bytes_copied > 0)
 	{
 		dest_fd = write(fd_to, &buffer, bytes_copied);
-		check_file(fd_to, argv[2], 'w');
+		check_file(dest_fd, argv[2], 'w');
 		bytes_copied = read(fd_from, &buffer, 1024);
 		check_file(bytes_copied, argv[1], 'r');
 		fd_to = open(argv[2], O_WRONLY | O_APPEND);
