@@ -8,7 +8,6 @@
  *
  * Return: 0 if successful, 1 if not.
  */
-
 int main(int argc, char *argv[])
 {
 	int fd_from = 0, fd_to = 0, closed_source = 0,
