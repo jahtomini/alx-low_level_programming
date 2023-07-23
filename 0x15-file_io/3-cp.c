@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int fd_from = 0, fd_to = 0, closed_source = 0,
-	closed_destination = 0, bytes_copied = 0;
+	closed_destination = 0, bytes_copied = 0, dest_fd = 0;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -24,15 +24,16 @@ int main(int argc, char *argv[])
 	fd_from = open(argv[1], O_RDONLY);
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	check_file(fd_from, argv[1], 'r');
-	check_file(fd_to, argv[2], 'w');
-
 	bytes_copied = read(fd_from, &buffer, 1024);
+
+	check_file(bytes_copied, argv[1], 'r');
 
 	while (bytes_copied > 0)
 	{
-		write(fd_to, &buffer, bytes_copied);
+		dest_fd = write(fd_to, &buffer, bytes_copied);
+		check_file(fd_to, argv[2], 'w');
 		bytes_copied = read(fd_from, &buffer, 1024);
+		check_file(bytes_copied, argv[1], 'r');
 		fd_to = open(argv[2], O_WRONLY | O_APPEND);
 	}
 
