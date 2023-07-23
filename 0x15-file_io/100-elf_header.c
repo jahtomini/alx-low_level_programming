@@ -37,7 +37,6 @@ void print_elf_header(Elf64_Ehdr *header)
 
 	print_class(header->e_ident);
 	print_data(header->e_ident);
-	print_data(header->e_ident);
 	print_version(header->e_ident);
 	print_osabi(header->e_ident);
 	print_abi(header->e_ident);
