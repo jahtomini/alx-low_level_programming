@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -22,30 +23,80 @@ void print_error(const char *message)
  *
  * Return: Nothing.
 */
-void print_elf_header(const Elf64_Ehdr *header)
+void print_elf_header(Elf64_Ehdr *header)
 {
 	int i;
 
 	printf("ELF Header:\n");
-	printf("  Magic: ");
+	printf("  Magic:   ");
+
 	for (i = 0; i < EI_NIDENT; ++i)
 		printf("%02x ", header->e_ident[i]);
 
-	printf("\n  Class:                            %s\n",
-	(header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
-	printf("  Data:                            %s\n",
-	(header->e_ident[EI_DATA] == ELFDATA2LSB)
-	? "2's complement, little endian" : "2's complement, big endian");
-	printf("  Version:                            %d\n",
-	header->e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            %d\n",
-	header->e_ident[EI_OSABI]);
-	printf("  ABI Version:                            %d\n",
-	header->e_ident[EI_ABIVERSION]);
-	printf("  Type:                            0x%x\n",
-	header->e_type);
-	printf("  Entry point address:                            0x%lx\n",
-	(unsigned long)header->e_entry);
+	printf("\n");
+
+	print_class(header->e_ident);
+	print_data(header->e_ident);
+	print_data(header->e_ident);
+	print_version(header->e_ident);
+	print_osabi(header->e_ident);
+	print_abi(header->e_ident);
+	print_type(header->e_type, header->e_ident);
+	print_entry(header->e_entry, header->e_ident);
+
+	/* free(header); */
+}
+
+/**
+ * print_class - Prints the class of an ELF header.
+ *
+ * @e_ident: A pointer to an array containing the ELF class.
+ */
+void print_class(unsigned char *e_ident)
+{
+	printf("  Class:                             ");
+
+	switch (e_ident[EI_CLASS])
+	{
+	case ELFCLASSNONE:
+		printf("none\n");
+		break;
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
+}
+
+/**
+ * print_data - Prints the data of an ELF header.
+ *
+ * @e_ident: A pointer to an array containing the ELF class.
+ *
+ * Return: Nothing.
+ */
+void print_data(unsigned char *e_ident)
+{
+	printf("  Data:                              ");
+
+	switch (e_ident[EI_DATA])
+	{
+	case ELFDATANONE:
+		printf("none\n");
+		break;
+	case ELFDATA2LSB:
+		printf("2's complement, little endian\n");
+		break;
+	case ELFDATA2MSB:
+		printf("2's complement, big endian\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
 }
 
 /**
@@ -56,6 +107,7 @@ void print_elf_header(const Elf64_Ehdr *header)
  *
  * Return: 0 if successful, 1 if not.
  */
+
 int main(int argc, char *argv[])
 {
 	const char *filename = argv[1];
@@ -76,9 +128,7 @@ int main(int argc, char *argv[])
 	header.e_ident[EI_MAG1] != ELFMAG1 ||
 	header.e_ident[EI_MAG2] != ELFMAG2 ||
 	header.e_ident[EI_MAG3] != ELFMAG3)
-	{
 		print_error("Not an ELF file");
-	}
 
 	/* Print the ELF header information */
 	print_elf_header(&header);
