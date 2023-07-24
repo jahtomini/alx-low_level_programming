@@ -40,8 +40,6 @@ void print_elf_header(Elf64_Ehdr *header)
 			printf(" ");
 	}
 
-	printf("\n");
-
 	print_class(header->e_ident);
 	print_data(header->e_ident);
 	print_version(header->e_ident);
